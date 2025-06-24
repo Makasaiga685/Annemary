@@ -1153,6 +1153,165 @@
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Climate Data Visualization Scripts -->
+    <script>
+      // Initialize charts when the page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // Sea Level Rise Chart
+        const seaLevelCtx = document.getElementById('seaLevelChart').getContext('2d');
+        new Chart(seaLevelCtx, {
+          type: 'line',
+          data: {
+            labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+            datasets: [{
+              label: 'Sea Level (mm above 2000 baseline)',
+              data: [0, 16, 32, 48, 64, 80],
+              borderColor: '#dc3545',
+              backgroundColor: 'rgba(220, 53, 69, 0.1)',
+              tension: 0.4,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Sea Level Rise (mm)'
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+
+        // Temperature Anomaly Chart
+        const tempCtx = document.getElementById('temperatureChart').getContext('2d');
+        new Chart(tempCtx, {
+          type: 'bar',
+          data: {
+            labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+            datasets: [{
+              label: 'Temperature Anomaly (°C)',
+              data: [0.8, 1.0, 1.2, 1.4, 1.6, 1.8],
+              backgroundColor: [
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(255, 159, 64, 0.8)',
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(255, 99, 132, 0.9)',
+                'rgba(220, 53, 69, 0.9)',
+                'rgba(220, 53, 69, 1)'
+              ],
+              borderColor: [
+                'rgba(255, 206, 86, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(220, 53, 69, 1)',
+                'rgba(220, 53, 69, 1)'
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Temperature Increase (°C)'
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+
+        // Mangrove Restoration Chart
+        const mangroveCtx = document.getElementById('mangroveChart').getContext('2d');
+        new Chart(mangroveCtx, {
+          type: 'line',
+          data: {
+            labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+            datasets: [{
+              label: 'Cumulative Seedlings Planted',
+              data: [13000, 35000, 52000, 78000, 105000, 135000, 160000, 180000],
+              borderColor: '#28a745',
+              backgroundColor: 'rgba(40, 167, 69, 0.1)',
+              tension: 0.4,
+              fill: true,
+              pointBackgroundColor: '#28a745',
+              pointBorderColor: '#28a745',
+              pointRadius: 5
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: 'Seedlings Planted'
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              }
+            }
+          }
+        });
+
+        // Carbon Sequestration Chart
+        const carbonCtx = document.getElementById('carbonChart').getContext('2d');
+        new Chart(carbonCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['CO2 Sequestered', 'Remaining Potential'],
+            datasets: [{
+              data: [540, 460],
+              backgroundColor: [
+                '#17a2b8',
+                '#e9ecef'
+              ],
+              borderColor: [
+                '#17a2b8',
+                '#dee2e6'
+              ],
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom'
+              }
+            }
+          }
+        });
+
+      });
+    </script>
+
   </body>
 
 </html>

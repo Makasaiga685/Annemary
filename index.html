@@ -30,6 +30,40 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <!-- Custom CSS for Climate Data Visualizations -->
+    <style>
+      .chart-container {
+        height: 350px;
+        margin-bottom: 20px;
+      }
+      
+      .chart-container canvas {
+        height: 250px !important;
+      }
+      
+      .insights-container {
+        background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .climate-data .chart-container {
+        transition: transform 0.3s ease;
+      }
+      
+      .climate-data .chart-container:hover {
+        transform: translateY(-5px);
+      }
+      
+      .bg-white {
+        background-color: #ffffff !important;
+      }
+      
+      .shadow {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+      }
+    </style>
+
     <!-- =======================================================
   * Template Name: iPortfolio
   * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
